@@ -1,0 +1,130 @@
+/* ============================================================
+   animations.css — キーフレーム / 登場演出
+============================================================ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(215,38,61,0.6); }
+  50% { box-shadow: 0 0 18px 6px rgba(215,38,61,0); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes dataFlow {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+
+@keyframes counter {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* ---------- 適用クラス ----------- */
+.anim-fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out); }
+.anim-fade-up.is-visible { opacity: 1; transform: translateY(0); }
+
+.anim-fade-in { opacity: 0; transition: opacity 0.8s var(--ease-out); }
+.anim-fade-in.is-visible { opacity: 1; }
+
+.anim-scale-in { opacity: 0; transform: scale(0.92); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+.anim-scale-in.is-visible { opacity: 1; transform: scale(1); }
+
+.anim-slide-left { opacity: 0; transform: translateX(-20px); transition: all 0.6s var(--ease-out); }
+.anim-slide-left.is-visible { opacity: 1; transform: translateX(0); }
+
+.anim-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+.anim-stagger.is-visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.05s; }
+.anim-stagger.is-visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.12s; }
+.anim-stagger.is-visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.19s; }
+.anim-stagger.is-visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.26s; }
+.anim-stagger.is-visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.33s; }
+.anim-stagger.is-visible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.anim-stagger.is-visible > *:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 0.47s; }
+.anim-stagger.is-visible > *:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 0.54s; }
+.anim-stagger.is-visible > *:nth-child(9) { opacity: 1; transform: translateY(0); transition-delay: 0.61s; }
+.anim-stagger.is-visible > *:nth-child(n+10) { opacity: 1; transform: translateY(0); transition-delay: 0.68s; }
+
+/* 初回ロード（ヒーロー） */
+.hero-anim-1 { animation: fadeInUp 0.9s var(--ease-out) 0.1s both; }
+.hero-anim-2 { animation: fadeInUp 0.9s var(--ease-out) 0.25s both; }
+.hero-anim-3 { animation: fadeInUp 0.9s var(--ease-out) 0.4s both; }
+.hero-anim-4 { animation: fadeInUp 0.9s var(--ease-out) 0.55s both; }
+.hero-anim-5 { animation: fadeInUp 0.9s var(--ease-out) 0.7s both; }
+
+.pulse { animation: pulse 2.2s ease-in-out infinite; }
+.glow { animation: glow 2.4s ease-in-out infinite; }
+.float { animation: floatY 3.2s ease-in-out infinite; }
+.rotate-slow { animation: rotateSlow 18s linear infinite; }
+.blink { animation: blink 1.8s ease-in-out infinite; }
+
+/* カウンター値 */
+.count {
+  display: inline-block;
+  position: relative;
+}
+
+/* Reduced Motion 尊重 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

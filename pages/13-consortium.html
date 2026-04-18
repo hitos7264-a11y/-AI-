@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="第13章：コンソーシアム構想。開発したAIを出資企業の独占物とせず、業種別コンソーシアムで広く日本企業へ開放する二層構造。">
+<meta name="theme-color" content="#0b0d14">
+<title>第13章 コンソーシアム構想 ― 日本AI基盤モデル開発</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<div data-mount="header"></div>
+<div data-mount="drawer"></div>
+
+<main>
+  <div class="container">
+
+    <header class="page-header anim-fade-up">
+      <nav class="breadcrumbs">
+        <a href="../index.html">ホーム</a><span class="sep">/</span><span>第13章</span>
+      </nav>
+      <div class="page-header__kicker">CHAPTER 13 / CONSORTIUM</div>
+      <h1>コンソーシアム構想<br>モデル開放と<br>業種別最適化</h1>
+      <p class="page-header__lead">
+        開発したAIを出資企業の独占物とせず、<span class="hl">広く日本企業へ開放</span>していく方針。業界ごとに特化型モデルを派生させる二層構造。
+      </p>
+    </header>
+
+    <article class="article-body sect-sm anim-fade-up">
+      <p>この新会社のもう一つの特徴は、開発したAIを出資企業の独占物とせず、<strong>広く日本企業へ開放していく方針</strong>を掲げている点にある。</p>
+
+      <p>具体的には、業界ごとのコンソーシアムを組成し、各社が保有するデータを安全にAIに組み込んで、用途ごとに最適化（ファインチューニング）できる仕組みを整えることが構想されている。</p>
+
+      <p>これは、汎用的な一兆パラメーター級の基盤モデルを<strong>共通インフラ</strong>としつつ、自動車業界なら自動車、鉄鋼業界なら鉄鋼、金融業界なら金融というように、それぞれの業種データを学習させた<strong>特化型モデルを派生させる二層構造</strong>の設計思想である。</p>
+
+      <p>出資者として既に日本製鉄と神戸製鋼所という鉄鋼二社、三メガバンクという金融三社、ホンダという自動車、ソニーというエンタメ・半導体の代表が揃っていることを考えれば、<strong>発足当初から業界別コンソーシアムの芽は植えられている</strong>とも解釈できる。</p>
+
+      <p>この方式のメリットは、<strong>知的財産を守りながらデジタルトランスフォーメーション（DX）を推進しやすくなる</strong>点にあり、海外のAI提供企業にデータを預けて汎用モデルのプロンプト工夫で済ませる従来型とは一線を画する<strong>「日本型DX」のアーキテクチャ</strong>とも位置づけられる。</p>
+
+      <p>自動車分野では自動運転技術や生産工程の効率化への応用、鉄鋼では高炉の操業最適化、金融では与信判断の高度化と不正検知、エンタメではゲームAIやコンテンツ生成といった、多彩な応用が既に視野に入っている。</p>
+
+      <p>最終的には<strong>出資企業以外の日本企業にも広くモデルが提供される予定</strong>で、日本全体の産業競争力を底上げする<strong class="hl">公共性のあるインフラ</strong>としての役割が期待されているのである。</p>
+    </article>
+
+    <!-- 二層構造 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">2-LAYER ARCHITECTURE</div>
+        <h2>基盤＋特化モデルの二層構造</h2>
+      </div>
+
+      <div class="card card-gradient anim-fade-up">
+        <div class="card__eyebrow"><i class="fa-solid fa-layer-group"></i> 共通基盤レイヤー</div>
+        <h3 class="card__title">一兆パラメーター基盤モデル</h3>
+        <div class="card__body">
+          マルチモーダル入力を統合処理する汎用的な「知のコア」。全コンソーシアムが共有する共通インフラ。
+        </div>
+      </div>
+
+      <div style="text-align:center; padding:var(--sp-3) 0; color:var(--c-text-dim);">
+        <i class="fa-solid fa-arrow-down" style="font-size:22px;"></i><br>
+        <small>業界データでファインチューニング</small>
+      </div>
+
+      <div class="grid grid-2 anim-stagger">
+        <div class="card">
+          <div class="card__eyebrow"><i class="fa-solid fa-car"></i> AUTO</div>
+          <h3 class="card__title" style="font-size:var(--fs-sm);">自動車コンソ</h3>
+          <div class="card__body" style="font-size:var(--fs-xs);">自動運転・生産工程の効率化<br><strong>ホンダ</strong></div>
+        </div>
+        <div class="card">
+          <div class="card__eyebrow"><i class="fa-solid fa-industry"></i> STEEL</div>
+          <h3 class="card__title" style="font-size:var(--fs-sm);">鉄鋼コンソ</h3>
+          <div class="card__body" style="font-size:var(--fs-xs);">高炉操業最適化<br><strong>日本製鉄・神戸製鋼</strong></div>
+        </div>
+        <div class="card">
+          <div class="card__eyebrow"><i class="fa-solid fa-building-columns"></i> FINANCE</div>
+          <h3 class="card__title" style="font-size:var(--fs-sm);">金融コンソ</h3>
+          <div class="card__body" style="font-size:var(--fs-xs);">与信判断・不正検知<br><strong>三メガバンク</strong></div>
+        </div>
+        <div class="card">
+          <div class="card__eyebrow"><i class="fa-solid fa-gamepad"></i> ENTERTAINMENT</div>
+          <h3 class="card__title" style="font-size:var(--fs-sm);">エンタメコンソ</h3>
+          <div class="card__body" style="font-size:var(--fs-xs);">ゲームAI・コンテンツ生成<br><strong>ソニー</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 従来型との比較 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">JAPAN-STYLE DX</div>
+        <h2>「日本型DX」vs 従来型</h2>
+      </div>
+
+      <div class="role-diagram anim-stagger">
+        <div class="role-block is-use" style="border-color: var(--c-text-faint); opacity:0.85;">
+          <div class="role-block__label">CONVENTIONAL ／ 従来型</div>
+          <div class="role-block__title">海外汎用LLM＋プロンプト工夫</div>
+          <div class="role-block__desc">海外AI企業にデータを預け、プロンプト工夫で乗り切る。機密データが海外経由、IP流出リスク。</div>
+        </div>
+        <div class="role-block is-make">
+          <div class="role-block__label">JAPAN-STYLE ／ 日本型DX</div>
+          <div class="role-block__title">共通基盤＋業界特化ファインチューニング</div>
+          <div class="role-block__desc">国産基盤モデル上で各社データを安全に組込み、業種別に最適化。IPを守りながらDX推進。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sect-sm">
+      <div class="callout callout-gold anim-fade-up">
+        <i class="fa-solid fa-handshake"></i>
+        <div>
+          <strong>公共性のあるインフラへ</strong><br>
+          最終的には出資企業以外の日本企業にも広くモデルが提供される予定。日本全体の産業競争力を底上げする公共性のあるインフラとしての役割。
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-nav">
+      <a href="12-market.html" class="page-nav__link">
+        <small><i class="fa-solid fa-chevron-left"></i> 前の章</small>
+        <strong>市場の反応</strong>
+      </a>
+      <a href="14-longterm.html" class="page-nav__link next">
+        <small>次の章 <i class="fa-solid fa-chevron-right"></i></small>
+        <strong>2030年に向けた長期展望</strong>
+      </a>
+    </nav>
+
+  </div>
+</main>
+
+<button class="to-top" aria-label="トップへ戻る"><i class="fa-solid fa-arrow-up"></i></button>
+<div data-mount="bottomnav"></div>
+<div data-mount="footer"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>JAFM.init(null, '13-consortium');</script>
+</body>
+</html>
