@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="第11章：見過ごされがちな懸念と、立ちはだかる四つの壁。資金・GPU・電力・許認可、そして100人体制の小ささ、ステージゲートプレッシャー。">
+<meta name="theme-color" content="#0b0d14">
+<title>第11章 見過ごされがちな懸念と四つの壁 ― 日本AI基盤モデル開発</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<div data-mount="header"></div>
+<div data-mount="drawer"></div>
+
+<main>
+  <div class="container">
+
+    <header class="page-header anim-fade-up">
+      <nav class="breadcrumbs">
+        <a href="../index.html">ホーム</a><span class="sep">/</span><span>第11章</span>
+      </nav>
+      <div class="page-header__kicker">CHAPTER 11 / CONCERNS & WALLS</div>
+      <h1>見過ごされがちな懸念と、<br>立ちはだかる<br>四つの壁</h1>
+      <p class="page-header__lead">
+        これほどの布陣と国家支援を背景に持つプロジェクトではあるが、冷静に見れば<span class="hl">その道のりは平坦ではない</span>。
+      </p>
+    </header>
+
+    <article class="article-body sect-sm anim-fade-up">
+      <p>これほどの布陣と国家支援を背景に持つプロジェクトではあるが、冷静に見ればその道のりは平坦ではない。</p>
+
+      <p>まず、最初に<strong>「勝てる領域」が何なのかが、現時点では必ずしも明確ではない</strong>という点が専門家から指摘されている。自動運転、人型ロボット、工場自動化、金融、エンタメと出口は並んでいるものの、限られた計算資源を最初にどこに集中投下するかという優先順位付けは、出資各社の利害が絡むため調整が難航する可能性を孕んでいる。</p>
+
+      <p>第二に、<strong>実装面でのギャップ</strong>である。「一兆パラメーターのモデルを作る」という宣言と、「それを実際に動かせる環境が整っている」という状態の間には、<strong class="hl">資金・GPU調達・電力・許認可という四つの壁</strong>が並んでおり、これらを一つずつ乗り越える地道な作業が必要となる。</p>
+
+      <p>第三に、<strong>ソフトバンク自身の財務余力</strong>の問題がある。Stargate計画へのコミットメントだけで数百億ドル規模の責任を負っている同社が、国内投資でも一兆九千億円規模のデータセンター建設を並行して進める体力が持続するかどうかは、為替動向やグループの収益構造次第で変わってくる。</p>
+
+      <p>第四に、<strong>約百人という開発体制の規模</strong>である。OpenAIやGoogle DeepMindの主力AIチームが数千人規模であることを考えると、百人という数字はあまりに小さく、国内に分散していた高度AI人材を集約したとしても、そこから更に採用を拡大できなければ競争力の持続は難しい。</p>
+
+      <p>そして第五に、<strong>NEDOの五年契約が実はステージゲート方式</strong>であり、毎年の審査で進捗が不十分と判断されれば支援額が削減される可能性もあるという点で、絶えざる実績プレッシャーの下に置かれることになる。</p>
+
+      <blockquote class="pull-quote">
+        汎用LLMでOpenAIに勝つという戦略は、正直なところほぼ無謀。だからこそフィジカルAI特化への賭けに全精力を集中しなければならない。
+        <cite>― note（tank_ai）辛辣な分析より</cite>
+      </blockquote>
+    </article>
+
+    <!-- 四つの壁 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">THE 4 WALLS</div>
+        <h2>立ちはだかる四つの壁</h2>
+        <p class="section-head__lead">「作る」宣言と「動かす」現実の間にあるもの。</p>
+      </div>
+
+      <div class="grid grid-2 anim-stagger">
+        <div class="info-card">
+          <div class="info-card__icon icon-red"><i class="fa-solid fa-coins"></i></div>
+          <div><div class="info-card__title">資金</div><div class="info-card__body">1.9兆円規模の持続調達</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon icon-blue"><i class="fa-solid fa-microchip"></i></div>
+          <div><div class="info-card__title">GPU調達</div><div class="info-card__body">NVIDIA最新世代の確保</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon icon-gold"><i class="fa-solid fa-bolt"></i></div>
+          <div><div class="info-card__title">電力</div><div class="info-card__body">300MW超の安定供給</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon icon-dark"><i class="fa-solid fa-file-lines"></i></div>
+          <div><div class="info-card__title">許認可</div><div class="info-card__body">規制・DC建設認可</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 五大懸念 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">FIVE CONCERNS</div>
+        <h2>五つの構造的懸念</h2>
+      </div>
+
+      <div class="feature-list anim-stagger">
+        <div class="feature-item">
+          <div class="feature-item__num">1</div>
+          <div>
+            <div class="feature-item__title">勝てる領域の不明確性</div>
+            <div class="feature-item__desc">自動運転・人型ロボ・工場自動化・金融・エンタメ── 出資各社の利害が絡む優先順位付けが難航しうる。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__num">2</div>
+          <div>
+            <div class="feature-item__title">実装ギャップ</div>
+            <div class="feature-item__desc">「作れる」宣言と「動かせる」環境の間に、資金・GPU・電力・許認可の四つの壁。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__num">3</div>
+          <div>
+            <div class="feature-item__title">ソフトバンクの財務余力</div>
+            <div class="feature-item__desc">Stargateへ数百億ドルコミットの状態で1.9兆円のDC投資を並走。為替次第で変わる持続性。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__num">4</div>
+          <div>
+            <div class="feature-item__title">開発体制の小ささ</div>
+            <div class="feature-item__desc">約100人はOpenAI・Google DeepMindの数千人体制に比して圧倒的に小さい。採用拡大が生命線。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__num">5</div>
+          <div>
+            <div class="feature-item__title">ステージゲート・プレッシャー</div>
+            <div class="feature-item__desc">NEDOの5年契約は毎年の審査制。進捗不十分で支援削減の可能性。絶えざる実績プレッシャー下。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sect-sm">
+      <div class="callout callout-warn anim-fade-up">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div>
+          <strong>note（tank_ai）の辛辣な指摘</strong><br>
+          汎用LLMでOpenAIに勝つ戦略は、正直なところほぼ無謀。だからこそフィジカルAI特化への賭けに全精力を集中しなければならない。この戦略的焦点化が成否を分ける。
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-nav">
+      <a href="10-demographics.html" class="page-nav__link">
+        <small><i class="fa-solid fa-chevron-left"></i> 前の章</small>
+        <strong>日本の人口動態</strong>
+      </a>
+      <a href="12-market.html" class="page-nav__link next">
+        <small>次の章 <i class="fa-solid fa-chevron-right"></i></small>
+        <strong>市場の反応</strong>
+      </a>
+    </nav>
+
+  </div>
+</main>
+
+<button class="to-top" aria-label="トップへ戻る"><i class="fa-solid fa-arrow-up"></i></button>
+<div data-mount="bottomnav"></div>
+<div data-mount="footer"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>JAFM.init(null, '11-concerns');</script>
+</body>
+</html>

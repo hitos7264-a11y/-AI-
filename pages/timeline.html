@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="日本AI基盤モデル開発の完全年表。2026年1月の法人番号指定から、2040年の世界シェア目標までを時系列で一覧。">
+<meta name="theme-color" content="#0b0d14">
+<title>完全年表 ― 日本AI基盤モデル開発</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<div data-mount="header"></div>
+<div data-mount="drawer"></div>
+
+<main>
+  <div class="container">
+
+    <header class="page-header anim-fade-up">
+      <nav class="breadcrumbs">
+        <a href="../index.html">ホーム</a><span class="sep">/</span><span>完全年表</span>
+      </nav>
+      <div class="page-header__kicker">COMPLETE TIMELINE</div>
+      <h1>完全年表</h1>
+      <p class="page-header__lead">
+        2026年1月の法人番号指定から、2040年の世界シェア目標まで── 時系列で一望。
+      </p>
+    </header>
+
+    <!-- フィルタタブ -->
+    <div class="scroll-tabs anim-fade-up" id="js-timeline-tabs">
+      <button class="scroll-tab is-active" data-filter="all">すべて</button>
+      <button class="scroll-tab" data-filter="founding">設立</button>
+      <button class="scroll-tab" data-filter="key">キー</button>
+      <button class="scroll-tab" data-filter="govt">政府</button>
+      <button class="scroll-tab" data-filter="press">報道</button>
+      <button class="scroll-tab" data-filter="market">市場</button>
+      <button class="scroll-tab" data-filter="softbank">SB関連</button>
+      <button class="scroll-tab" data-filter="future">未来</button>
+    </div>
+
+    <section class="sect-sm">
+      <div id="js-timeline-host"></div>
+    </section>
+
+    <section class="sect-sm">
+      <div class="callout anim-fade-up">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <div>
+          <strong>年表の重要性</strong><br>
+          公表前3ヶ月間の水面下の動き、公募日程との完全連動、そして2030年・2040年という遠大な目標年── 時間軸で見ることで、この国家プロジェクトの計画性と周到さがより鮮明になる。
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-nav">
+      <a href="../index.html" class="page-nav__link">
+        <small><i class="fa-solid fa-chevron-left"></i> ホーム</small>
+        <strong>トップへ戻る</strong>
+      </a>
+      <a href="companies.html" class="page-nav__link next">
+        <small>次へ <i class="fa-solid fa-chevron-right"></i></small>
+        <strong>企業一覧</strong>
+      </a>
+    </nav>
+
+  </div>
+</main>
+
+<button class="to-top" aria-label="トップへ戻る"><i class="fa-solid fa-arrow-up"></i></button>
+<div data-mount="bottomnav"></div>
+<div data-mount="footer"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  (function(){
+    var host = document.getElementById('js-timeline-host');
+    function render(filter){
+      var items = SITE_DATA.timeline.filter(function(t){
+        if (filter === 'all') return true;
+        return t.type === filter;
+      });
+      var byYear = {};
+      items.forEach(function(it){
+        var yr = it.date.split('/')[0].trim();
+        if (!byYear[yr]) byYear[yr] = [];
+        byYear[yr].push(it);
+      });
+      host.innerHTML = Object.keys(byYear).map(function(yr){
+        return '<div class="year-group anim-fade-up">' +
+                 '<div class="year-group__title">' + yr + '</div>' +
+                 '<div class="v-timeline">' +
+                   byYear[yr].map(function(it){
+                     var cls = (it.type==='key' || it.type==='softbank') ? 'is-key' : '';
+                     return '<div class="v-timeline__item '+cls+'">' +
+                              '<div class="v-timeline__dot"></div>' +
+                              '<div class="v-timeline__date">'+it.date+'</div>' +
+                              '<div class="v-timeline__title">'+it.title+'</div>' +
+                              '<div class="v-timeline__desc">'+it.desc+'</div>' +
+                            '</div>';
+                   }).join('') +
+                 '</div>' +
+               '</div>';
+      }).join('');
+    }
+    render('all');
+
+    // フィルタ
+    document.querySelectorAll('#js-timeline-tabs .scroll-tab').forEach(function(tab){
+      tab.addEventListener('click', function(){
+        document.querySelectorAll('#js-timeline-tabs .scroll-tab').forEach(function(t){ t.classList.remove('is-active'); });
+        tab.classList.add('is-active');
+        render(tab.dataset.filter);
+        // フィルタ切替後に再度スクロールリビール対象を可視化
+        setTimeout(function(){
+          document.querySelectorAll('.anim-fade-up').forEach(function(el){ el.classList.add('is-visible'); });
+        }, 50);
+      });
+    });
+  })();
+  JAFM.init('timeline', 'timeline');
+</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="第12章：市場の反応。「フィジカルAI」が週明けに人気テーマ6位へ急浮上。ファナック、安川電機など関連銘柄が広範に物色された。">
+<meta name="theme-color" content="#0b0d14">
+<title>第12章 市場の反応 フィジカルAI人気テーマ化 ― 日本AI基盤モデル開発</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<div data-mount="header"></div>
+<div data-mount="drawer"></div>
+
+<main>
+  <div class="container">
+
+    <header class="page-header anim-fade-up">
+      <nav class="breadcrumbs">
+        <a href="../index.html">ホーム</a><span class="sep">/</span><span>第12章</span>
+      </nav>
+      <div class="page-header__kicker">CHAPTER 12 / MARKET RESPONSE</div>
+      <h1>市場の反応<br>「フィジカルAI」が<br>人気テーマ化</h1>
+      <p class="page-header__lead">
+        資本市場の反応は素早かった。週明けに<span class="hl">人気テーマ6位</span>へ急浮上、関連銘柄が広範に物色された。
+      </p>
+    </header>
+
+    <article class="article-body sect-sm anim-fade-up">
+      <p>資本市場の反応は素早かった。株式投資情報サイト「みんかぶ」と「株探」が集計する人気テーマランキングでは、週明けに<strong>「フィジカルAI」</strong>というテーマが一気に上位六位に躍り出て、関連銘柄が広範に物色された。</p>
+
+      <p>具体的には、産業ロボット大手の<strong>ファナック（証券コード六九五四）と安川電機（六五〇六）</strong>を筆頭に、日立製作所（六五〇一）、川崎重工業（七〇一二）、不二越（六四七四）といった既存のロボット関連株に買いが入り、部品系のハーモニック・ドライブ・システムズ（六三二四）やナブテスコ（六二六八）にも関心が及んだ。</p>
+
+      <p>中小型株では菊池製作所（三四四四）、CYBERDYNE（七七七九）、ヒーハイスト（六四三三）などが連想買いの対象となった。一方、新会社の出資中核である四社、<strong>ソフトバンク（九四三四）、NEC（六七〇一）、本田技研工業（七二六七）、ソニーグループ（六七五八）</strong>も、発表を好感する動きを見せた。</p>
+
+      <blockquote class="pull-quote">
+        日本独自の大規模なAIを開発し、我が国が強みを持つ製造業と掛け合わせた「フィジカルAI」領域での取り組みを加速する狙いがある。
+        <cite>― 証券メディア解説</cite>
+      </blockquote>
+
+      <p>専門的な証券メディアはこの動きが<strong>単なる一過性のテーマではなく、今後数年にわたる構造的な投資テーマ</strong>になり得るという認識が広がりつつある。資産運用情報メディアの「アセットアライブ」などは既に<strong>「日本AI基盤モデル開発」という独立テーマ</strong>を設定しており、AI半導体、AIエージェント、AIファクトリー、日本語特化型生成AI、フィジカルAIといった既存テーマ群とのクロスオーバーとして、この新会社の関連銘柄群を包括的に追跡する動きが始まっている。</p>
+    </article>
+
+    <!-- テーマランキング -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">HOT THEME RANKING</div>
+        <h2>人気テーマランキング</h2>
+      </div>
+
+      <div class="card anim-fade-up">
+        <div class="feature-list">
+          <div class="feature-item" style="border-color: var(--c-primary);">
+            <div class="feature-item__num" style="background: var(--g-primary);">6</div>
+            <div>
+              <div class="feature-item__title"><span class="hl">フィジカルAI</span><span class="badge badge-red" style="margin-left:8px;">NEW</span></div>
+              <div class="feature-item__desc">週明けに一気に人気テーマ6位へ急浮上（みんかぶ／株探）</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 関連銘柄一覧 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">RELATED STOCKS</div>
+        <h2>関連銘柄ウォッチリスト</h2>
+      </div>
+
+      <div class="card anim-fade-up" style="padding: var(--sp-3);">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>コード</th>
+              <th>銘柄名</th>
+              <th>カテゴリ</th>
+            </tr>
+          </thead>
+          <tbody id="js-stocks-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sect-sm">
+      <div class="callout anim-fade-up">
+        <i class="fa-solid fa-chart-line"></i>
+        <div>
+          <strong>構造的投資テーマへの進化</strong><br>
+          AI半導体／AIエージェント／AIファクトリー／日本語特化型生成AI／フィジカルAI──これら既存テーマ群のクロスオーバーとして、「日本AI基盤モデル開発」が独立テーマ化。アセットアライブ等が包括的に追跡を開始。
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-nav">
+      <a href="11-concerns.html" class="page-nav__link">
+        <small><i class="fa-solid fa-chevron-left"></i> 前の章</small>
+        <strong>見過ごされがちな懸念</strong>
+      </a>
+      <a href="13-consortium.html" class="page-nav__link next">
+        <small>次の章 <i class="fa-solid fa-chevron-right"></i></small>
+        <strong>コンソーシアム構想</strong>
+      </a>
+    </nav>
+
+  </div>
+</main>
+
+<button class="to-top" aria-label="トップへ戻る"><i class="fa-solid fa-arrow-up"></i></button>
+<div data-mount="bottomnav"></div>
+<div data-mount="footer"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  (function(){
+    var host = document.getElementById('js-stocks-table');
+    if (!host) return;
+    host.innerHTML = SITE_DATA.relatedStocks.map(function(s){
+      return '<tr><td class="mono">'+s.code+'</td><td>'+s.name+'</td><td class="text-dim">'+s.category+'</td></tr>';
+    }).join('');
+  })();
+  JAFM.init(null, '12-market');
+</script>
+</body>
+</html>

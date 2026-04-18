@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="日本AI基盤モデル開発の出資企業一覧。中核4社・少数株主5社・技術連携1社、計10社のプロフィールと役割。">
+<meta name="theme-color" content="#0b0d14">
+<title>企業一覧 ― 日本AI基盤モデル開発</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<div data-mount="header"></div>
+<div data-mount="drawer"></div>
+
+<main>
+  <div class="container">
+
+    <header class="page-header anim-fade-up">
+      <nav class="breadcrumbs">
+        <a href="../index.html">ホーム</a><span class="sep">/</span><span>企業一覧</span>
+      </nav>
+      <div class="page-header__kicker">COMPANIES</div>
+      <h1>出資企業一覧</h1>
+      <p class="page-header__lead">
+        中核4社・少数株主5社・技術連携1社── 計<span class="hl">10社</span>のプロフィールと役割を徹底整理。
+      </p>
+    </header>
+
+    <!-- 中核4社 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">CORE 4 / 中核四社</div>
+        <h2>経営責任を共有する主要株主</h2>
+        <p class="section-head__lead">それぞれ「十数％」ずつ出資。</p>
+      </div>
+      <div class="company-grid anim-stagger" id="js-core-list"></div>
+    </section>
+
+    <!-- 少数株主 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">MINORITY / 少数株主</div>
+        <h2>オールジャパンを象徴する布陣</h2>
+        <p class="section-head__lead">鉄鋼2社＋三メガバンク。</p>
+      </div>
+      <div class="company-grid anim-stagger" id="js-minor-list"></div>
+    </section>
+
+    <!-- 技術連携 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">TECH PARTNER / 技術連携</div>
+        <h2>AIスタートアップとの連携</h2>
+      </div>
+      <div class="company-grid anim-stagger" id="js-partner-list"></div>
+    </section>
+
+    <!-- サマリー -->
+    <section class="sect-sm">
+      <div class="grid grid-3 anim-stagger">
+        <div class="stat">
+          <div class="stat__value">4</div>
+          <div class="stat__label">中核企業</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">5</div>
+          <div class="stat__label">少数株主</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">1</div>
+          <div class="stat__label">技術連携</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sect-sm">
+      <div class="callout callout-gold anim-fade-up">
+        <i class="fa-solid fa-people-group"></i>
+        <div>
+          <strong>陣容拡大の余地</strong><br>
+          「複数企業が少数株主として出資交渉を進めている」との報道もあり、今後の追加出資で陣容がさらに拡大する可能性。業界別コンソーシアム構想とも連動する。
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-nav">
+      <a href="timeline.html" class="page-nav__link">
+        <small><i class="fa-solid fa-chevron-left"></i> 前へ</small>
+        <strong>完全年表</strong>
+      </a>
+      <a href="sources.html" class="page-nav__link next">
+        <small>次へ <i class="fa-solid fa-chevron-right"></i></small>
+        <strong>出典一覧</strong>
+      </a>
+    </nav>
+
+  </div>
+</main>
+
+<button class="to-top" aria-label="トップへ戻る"><i class="fa-solid fa-arrow-up"></i></button>
+<div data-mount="bottomnav"></div>
+<div data-mount="footer"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  (function(){
+    function render(id, arr){
+      var host = document.getElementById(id);
+      if (!host) return;
+      host.innerHTML = arr.map(function(c){
+        return '<div class="company-row">' +
+                 '<div class="company-row__mark ' + c.cls + '">' + c.mark + '</div>' +
+                 '<div class="company-row__body">' +
+                   '<div class="company-row__name">' + c.name + '</div>' +
+                   '<div class="company-row__code">Code: ' + c.code + ' / ' + c.role + '</div>' +
+                   '<div class="company-row__role">' + c.note + '</div>' +
+                   '<div class="company-row__tags">' +
+                     c.tags.map(function(t){ return '<span class="company-row__role-chip">' + t + '</span>'; }).join('') +
+                   '</div>' +
+                 '</div>' +
+               '</div>';
+      }).join('');
+    }
+    render('js-core-list', SITE_DATA.companies.core);
+    render('js-minor-list', SITE_DATA.companies.minority);
+    render('js-partner-list', SITE_DATA.companies.partners);
+  })();
+  JAFM.init('companies', 'companies');
+</script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="第4章：技術目標は一兆パラメーター。国内LLMの33倍、GPT-4と肩を並べる水準。マルチモーダル＋フィジカルAI基盤として機能させる野心。">
+<meta name="theme-color" content="#0b0d14">
+<title>第4章 一兆パラメーターのマルチモーダル基盤 ― 日本AI基盤モデル開発</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<div data-mount="header"></div>
+<div data-mount="drawer"></div>
+
+<main>
+  <div class="container">
+
+    <header class="page-header anim-fade-up">
+      <nav class="breadcrumbs">
+        <a href="../index.html">ホーム</a><span class="sep">/</span><span>第4章</span>
+      </nav>
+      <div class="page-header__kicker">CHAPTER 04 / TECHNICAL TARGET</div>
+      <h1>技術目標<br>一兆パラメーターの<br>マルチモーダル基盤モデル</h1>
+      <p class="page-header__lead">
+        国内AI開発史上<span class="hl">かつてない規模</span>。従来国産モデル最大規模の約33倍、GPT-4に肩を並べる水準。
+      </p>
+    </header>
+
+    <article class="article-body sect-sm anim-fade-up">
+      <p>新会社が掲げる技術目標は、国内のAI開発史上かつてない規模である。目指すパラメーター数は約<strong>「一兆」</strong>。これは、NECが既に公開している国産LLM「cotomi」や、NTTの「tsuzumi」、PFNの「PLaMo」、SB Intuitionsの「Sarashina」といった従来の国産モデルの最大規模（概ね三百億パラメーター級）と比較すると、単純計算で<strong>約三十三倍</strong>、実に桁違いのスケールとなる。</p>
+
+      <p>世界的に見ても、GPT-4の推定パラメーター数が約<strong>一・八兆</strong>、中国のDeepSeek-V3が<strong>六百七十一億</strong>と言われる中で、一兆という数字は<strong>最先端の米中モデルと肩を並べる水準</strong>を狙っていることを意味する。</p>
+
+      <p>ただし、規模の勝負だけではこの新会社の本質は見えてこない。開発者たちが繰り返し強調しているのは、テキストだけでなく、<strong>画像、映像、音声という複数モダリティ</strong>を同時に扱う「マルチモーダル」能力であり、さらに二〇三〇年度までにロボットや産業機械と連携させることを前提とした、いわゆる<strong>「フィジカルAI」</strong>の基盤として機能させることにある。</p>
+
+      <h2>フィジカルAIが必要とするもの</h2>
+
+      <p>フィジカルAIが必要とするのは、カメラ映像、LiDAR、温度・圧力・加速度センサーといった多種多様なセンサー入力を統合的に理解し、物理法則に基づいて行動結果を予測する<strong>「世界モデル」</strong>を内包し、ミリ秒単位でアクチュエーターを制御するリアルタイム応答性である。これらを小型モデルで実現するのは表現能力として不足するため、<strong>一兆パラメーターという巨大な受け皿</strong>を用意する必要があるのだ、というのが技術者サイドの説明である。</p>
+
+      <p>差別化のもう一つの柱は、日本の製造業が長年にわたって蓄積してきた<strong>稼働ログ、品質検査画像、設計文書</strong>といった産業データを学習に組み込むという点で、ウェブ上の一般データで訓練された汎用LLMには絶対に真似のできない独自の<strong class="hl">「知のコア」</strong>を築こうとしている。</p>
+    </article>
+
+    <!-- パラメーター比較 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">PARAM SCALE</div>
+        <h2>パラメーター数の比較</h2>
+        <p class="section-head__lead">既存国産LLMと世界最先端モデルとの対比。</p>
+      </div>
+
+      <div class="card anim-fade-up">
+        <div id="js-param-bars"></div>
+        <p style="font-size:10px; color:var(--c-text-faint); text-align:center; margin-top:8px;">※推定値を含む／単位：B=10億</p>
+      </div>
+    </section>
+
+    <!-- マルチモーダル入力 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">MULTIMODAL INPUT</div>
+        <h2>フィジカルAIが扱う入力</h2>
+      </div>
+
+      <div class="grid grid-2 anim-stagger">
+        <div class="info-card">
+          <div class="info-card__icon icon-red"><i class="fa-solid fa-camera"></i></div>
+          <div><div class="info-card__title">カメラ映像</div><div class="info-card__body">RGB+深度・画像認識・物体検出</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon icon-blue"><i class="fa-solid fa-satellite-dish"></i></div>
+          <div><div class="info-card__title">LiDAR</div><div class="info-card__body">3D空間認識・点群データ</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon icon-gold"><i class="fa-solid fa-temperature-high"></i></div>
+          <div><div class="info-card__title">温度センサー</div><div class="info-card__body">製造現場・設備状態</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon icon-dark"><i class="fa-solid fa-gauge-high"></i></div>
+          <div><div class="info-card__title">圧力・加速度</div><div class="info-card__body">物理法則に基づく制御</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon icon-red"><i class="fa-solid fa-microphone"></i></div>
+          <div><div class="info-card__title">音声</div><div class="info-card__body">音声認識・合成・感性処理</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon icon-blue"><i class="fa-solid fa-file-lines"></i></div>
+          <div><div class="info-card__title">テキスト</div><div class="info-card__body">設計文書・稼働ログ・検査記録</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 独自性の3本柱 -->
+    <section class="sect-sm">
+      <div class="section-head anim-fade-up">
+        <div class="section-head__kicker">THE 3 PILLARS</div>
+        <h2>新会社モデルの独自性</h2>
+      </div>
+      <div class="feature-list anim-stagger">
+        <div class="feature-item">
+          <div class="feature-item__num">1</div>
+          <div>
+            <div class="feature-item__title">巨大スケール</div>
+            <div class="feature-item__desc">一兆パラメーター級。小型モデルでは表現能力が不足するフィジカルAIに必要な「受け皿」を確保。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__num">2</div>
+          <div>
+            <div class="feature-item__title">マルチモーダル</div>
+            <div class="feature-item__desc">テキスト×画像×映像×音声×センサーを統合的に処理。「世界モデル」を内包する設計。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__num">3</div>
+          <div>
+            <div class="feature-item__title">産業データの知のコア</div>
+            <div class="feature-item__desc">稼働ログ・品質検査画像・設計文書など、汎用LLMには真似できない日本の製造業データで差別化。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-nav">
+      <a href="03-president.html" class="page-nav__link">
+        <small><i class="fa-solid fa-chevron-left"></i> 前の章</small>
+        <strong>初代社長をめぐる符号</strong>
+      </a>
+      <a href="05-roles.html" class="page-nav__link next">
+        <small>次の章 <i class="fa-solid fa-chevron-right"></i></small>
+        <strong>四社の役割分担</strong>
+      </a>
+    </nav>
+
+  </div>
+</main>
+
+<button class="to-top" aria-label="トップへ戻る"><i class="fa-solid fa-arrow-up"></i></button>
+<div data-mount="bottomnav"></div>
+<div data-mount="footer"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  // パラメーター比較バー
+  (function(){
+    var host = document.getElementById('js-param-bars');
+    if (!host) return;
+    host.innerHTML = SITE_DATA.paramCompare.map(function(p){
+      var cls = p.cls ? 'param-bar--'+p.cls : '';
+      var display = p.value >= 1000 ? (p.value/1000).toFixed(1)+'T' : p.value+'B';
+      return '<div class="param-bar '+cls+'">' +
+               '<div class="param-bar__head">' +
+                 '<span class="param-bar__name">'+p.name+'</span>' +
+                 '<span class="param-bar__val">'+display+'</span>' +
+               '</div>' +
+               '<div class="param-bar__track">' +
+                 '<div class="param-bar__fill" data-pct="'+p.pct+'" style="width:0%"></div>' +
+               '</div>' +
+             '</div>';
+    }).join('');
+  })();
+
+  JAFM.init(null, '04-tech-target');
+</script>
+</body>
+</html>
